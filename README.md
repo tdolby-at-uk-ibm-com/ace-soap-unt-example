@@ -63,3 +63,8 @@ BIP3727E: &apos;org.apache.axis2.AxisFault: CWWSS6521E: The Login failed because
 ```
 In this case, the BIP3731 error message shows a security profile, but because the flow has not
 provided any data in the Properties parser, the call still fails.
+
+# How the layers interact
+
+The ACE server has various layers that work together in this example:
+![UNT diagram](soap-unt-diagram.png)
