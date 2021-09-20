@@ -3,6 +3,8 @@ This repo contains an ACE project to demonstrate the use of SOAP UserName Tokens
 back-end provider flow is included, and will trace out the request message to stdout (using /proc/self/fd/1 on Unix platforms)
 so that the token can be inspected.
 
+![Flow picture](soap-client-app.png)
+
 # Importing and building the project
 
 This repo can be imported into the ACE v11 toolkit using the egit plugin (version 4.11; needed to install from a downloaded 
