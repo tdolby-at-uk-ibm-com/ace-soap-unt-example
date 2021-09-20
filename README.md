@@ -66,5 +66,10 @@ provided any data in the Properties parser, the call still fails.
 
 # How the layers interact
 
-The ACE server has various layers that work together in this example:
+The ACE server has various layers that work together in this example, as shown in this diagram:
+
+
 ![UNT diagram](soap-unt-diagram.png)
+
+Failing to provide a username and password in the Properties folder causes a failure at the bottom
+layer, while not providing a security profile causes a afilure further up.
