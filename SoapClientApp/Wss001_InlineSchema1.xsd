@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://wss001.miwssoap.broker.mqst.ibm.com" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:impl="http://wss001.miwssoap.broker.mqst.ibm.com" xmlns:intf="http://wss001.miwssoap.broker.mqst.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <element ibmSchExtn:docRoot="true" name="timesFiveResponse">
+    <complexType>
+     <sequence>
+      <element name="timesFiveReturn" type="int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element ibmSchExtn:docRoot="true" name="giveStringLength">
+    <complexType>
+     <sequence>
+      <element name="input" nillable="true" type="string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element ibmSchExtn:docRoot="true" name="giveStringLengthResponse">
+    <complexType>
+     <sequence>
+      <element name="giveStringLengthReturn" type="int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element ibmSchExtn:docRoot="true" name="timesTen">
+    <complexType>
+     <sequence>
+      <element name="input" type="int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element ibmSchExtn:docRoot="true" name="timesTenResponse">
+    <complexType>
+     <sequence>
+      <element name="timesTenReturn" nillable="true" type="string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element ibmSchExtn:docRoot="true" name="appendFive">
+    <complexType>
+     <sequence>
+      <element name="input" nillable="true" type="string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element ibmSchExtn:docRoot="true" name="appendFiveResponse">
+    <complexType>
+     <sequence>
+      <element name="appendFiveReturn" nillable="true" type="string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element ibmSchExtn:docRoot="true" name="throwOnValueSeven">
+    <complexType>
+     <sequence>
+      <element name="input" type="int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element ibmSchExtn:docRoot="true" name="throwOnValueSevenResponse">
+    <complexType>
+     <sequence>
+      <element name="throwOnValueSevenReturn" type="int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element ibmSchExtn:docRoot="true" name="timesFive">
+    <complexType>
+     <sequence>
+      <element name="input" type="int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>

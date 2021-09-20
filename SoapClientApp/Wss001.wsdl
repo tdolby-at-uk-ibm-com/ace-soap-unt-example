@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://wss001.miwssoap.broker.mqst.ibm.com" xmlns:impl="http://wss001.miwssoap.broker.mqst.ibm.com" xmlns:intf="http://wss001.miwssoap.broker.mqst.ibm.com" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <generatedXSD location="Wss001_InlineSchema1.xsd"/>
+        <binding hasEncoding="false" imported="true" name="Wss001SoapBinding" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+ <wsdl:types>
+  
+         <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://wss001.miwssoap.broker.mqst.ibm.com" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+<xsd:include schemaLocation="Wss001_InlineSchema1.xsd"/>
+    </schema>
+    </wsdl:types>
+
+   <wsdl:message name="timesTenResponse">
+
+      <wsdl:part element="impl:timesTenResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="throwOnValueSevenResponse">
+
+      <wsdl:part element="impl:throwOnValueSevenResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="timesTenRequest">
+
+      <wsdl:part element="impl:timesTen" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="giveStringLengthRequest">
+
+      <wsdl:part element="impl:giveStringLength" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="appendFiveResponse">
+
+      <wsdl:part element="impl:appendFiveResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="throwOnValueSevenRequest">
+
+      <wsdl:part element="impl:throwOnValueSeven" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="appendFiveRequest">
+
+      <wsdl:part element="impl:appendFive" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="giveStringLengthResponse">
+
+      <wsdl:part element="impl:giveStringLengthResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="timesFiveResponse">
+
+      <wsdl:part element="impl:timesFiveResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="timesFiveRequest">
+
+      <wsdl:part element="impl:timesFive" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Wss001">
+
+      <wsdl:operation name="timesFive">
+
+         <wsdl:input message="impl:timesFiveRequest" name="timesFiveRequest"/>
+
+         <wsdl:output message="impl:timesFiveResponse" name="timesFiveResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="giveStringLength">
+
+         <wsdl:input message="impl:giveStringLengthRequest" name="giveStringLengthRequest"/>
+
+         <wsdl:output message="impl:giveStringLengthResponse" name="giveStringLengthResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="timesTen">
+
+         <wsdl:input message="impl:timesTenRequest" name="timesTenRequest"/>
+
+         <wsdl:output message="impl:timesTenResponse" name="timesTenResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="appendFive">
+
+         <wsdl:input message="impl:appendFiveRequest" name="appendFiveRequest"/>
+
+         <wsdl:output message="impl:appendFiveResponse" name="appendFiveResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="throwOnValueSeven">
+
+         <wsdl:input message="impl:throwOnValueSevenRequest" name="throwOnValueSevenRequest"/>
+
+         <wsdl:output message="impl:throwOnValueSevenResponse" name="throwOnValueSevenResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="Wss001SoapBinding" type="impl:Wss001">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="timesFive">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="timesFiveRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="timesFiveResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="giveStringLength">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="giveStringLengthRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="giveStringLengthResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="timesTen">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="timesTenRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="timesTenResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="appendFive">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="appendFiveRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="appendFiveResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="throwOnValueSeven">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="throwOnValueSevenRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="throwOnValueSevenResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="Wss001Service">
+
+      <wsdl:port binding="impl:Wss001SoapBinding" name="Wss001">
+
+         <wsdlsoap:address location="http://localhost:9081/Wss001/services/Wss001"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

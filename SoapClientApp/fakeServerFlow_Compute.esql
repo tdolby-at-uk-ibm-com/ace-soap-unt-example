@@ -1,0 +1,14 @@
+DECLARE soapenv NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
+
+
+CREATE COMPUTE MODULE fakeServerFlow_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		-- CALL CopyMessageHeaders();
+		-- CALL CopyEntireMessage();
+		SET OutputRoot.Properties = InputRoot.Properties;
+		SET OutputRoot.XMLNSC.soapenv:Envelope.soapenv:Body.ns:timesFiveResponse.timesFiveReturn = 100;
+		RETURN TRUE;
+	END;
+
+END MODULE;
