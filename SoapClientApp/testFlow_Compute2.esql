@@ -1,10 +1,13 @@
-DECLARE ns NAMESPACE 'http://wss001.miwssoap.broker.mqst.ibm.com';
 
 
-CREATE COMPUTE MODULE testFlow_Compute
+CREATE COMPUTE MODULE testFlow_Compute2
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
 		SET OutputRoot.Properties = InputRoot.Properties;
+		
+		-- We add credentials here even though the next node will never
+		-- look for them because there is no security profile to tell it
+		-- to do so.
 		SET OutputRoot.Properties.IdentitySourceType = 'usernameAndPassword';
 		SET OutputRoot.Properties.IdentitySourceToken = 'abc';
 		SET OutputRoot.Properties.IdentitySourcePassword = 'def';

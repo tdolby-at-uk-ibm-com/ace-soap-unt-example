@@ -1,0 +1,11 @@
+
+
+CREATE COMPUTE MODULE testFlow_Compute1
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot.Properties = InputRoot.Properties;
+		
+		SET OutputRoot.SOAP.Body.ns:timesFive.input = 20;
+		RETURN TRUE;
+	END;
+END MODULE;
