@@ -9,7 +9,7 @@ so that the token can be inspected.
 
 This repo can be imported into the ACE v11 toolkit using the egit plugin (version 4.11; needed to install from a downloaded 
 p2 repo) and then deployed to an ACE server. After the application and policy have been deployed (using the provided BAR file)
-the main test flow can be invoked at http://localhost:7800/testFlow to trigger the SOAP call to the back-end flow.
+the main test flow can be invoked at http://localhost:7800/testFlow to trigger a successful SOAP call to the back-end flow.
 
 # Testing the project
 
@@ -27,13 +27,12 @@ results including the token; the trace output should contain lines similar to th
 
 # Triggering different failures
 
-As well as successfully providing UserName Tokens, the projects can be modified slightly to show different failures.
+As well as successfully providing UserName Tokens, the projects can be used to show different failures.
 
 ## Failure to specify a security profile
 
-Changing the link from the Compute node so that it goes to the "SOAP Request Without SecProf" node will route the
-message to a nod ethat has the correct policy set and bindings, but no security profile specified. When the flow
-is invoked, errors of the following form will be returned:
+Invoking http://localhost:7800/noSecurityProfile will route the message to a node that has the correct policy set and 
+bindings, but no security profile specified. When the flow is invoked, errors of the following form will be returned:
 ```
 <detail><text>Exception. BIP2230E: Error detected whilst processing a message in node &apos;testFlow.SOAP Request Without SecProf&apos;. : /jenkins/slot0/product-build/WMB/src/DataFlowEngine/TemplateNodes/ImbRequestTemplateNode.cpp: 1172: ImbRequestTemplateNode::processMessageAssemblyToFailure: ComIbmSOAPRequestNode: testFlow#FCMComposite_1_5
 BIP3754E: The SOAP Request Node or SOAP Async Request Node testFlow.SOAP Request Without SecProf encountered an error while processing the outbound SOAP request. : /jenkins/slot0/product-build/WMB/src/WebServices/WSLibrary/ImbSOAPRequestNode.cpp: 215: ImbSOAPRequestNode::requestData: ComIbmSOAPRequestNode: testFlow#FCMComposite_1_5
@@ -45,14 +44,9 @@ Note the blank security profile in the BIP3731 error message.
 
 ## Failure to provide user/password in the Properties parser
 
-Commenting out the following lines in testFlow_Compute.esql
-```
-		SET OutputRoot.Properties.IdentitySourceType = 'usernameAndPassword';
-		SET OutputRoot.Properties.IdentitySourceToken = 'abc';
-		SET OutputRoot.Properties.IdentitySourcePassword = 'def';
-```
-will stop the flow from providing user/pw information. In this case, the flow will fail when 
-called, and will return errors as follows:
+Invoking http://localhost:7800/noCreds will route the message to a node that has the correct policy set and 
+bindings, but the Compute node on that branch of the flow will not provide user/pw information. In this case, 
+the flow will fail when called, and will return errors as follows:
 
 ```
 <detail><text>Exception. BIP2230E: Error detected whilst processing a message in node &apos;testFlow.SOAP Request With SecProf&apos;. : /jenkins/slot0/product-build/WMB/src/DataFlowEngine/TemplateNodes/ImbRequestTemplateNode.cpp: 1172: ImbRequestTemplateNode::processMessageAssemblyToFailure: ComIbmSOAPRequestNode: testFlow#FCMComposite_1_4
